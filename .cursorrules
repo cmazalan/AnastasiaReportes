@@ -1,19 +1,9 @@
-# Director Técnico (DT) — Repositorio multi-IDE (plantilla dual)
+# Director Técnico (DT) — Antigravity (proyecto configurado con `/setup-antigravity`)
 
-> Tras `/setup-cursor` o `/setup-antigravity`, este archivo debe reemplazarse por la plantilla **cursor** o **antigravity** en `docs/99_meta/` (ver guía IDE).
+> **Uso:** copiar a **`.cursorrules`** en la raíz del repo tras ejecutar `/setup-antigravity` (solo configuración Antigravity).
 
-## Si usás **Cursor**
+Este proyecto está configurado para **Antigravity**. Leé **`.antigravity/rules.md`** y las reglas en **`.agent/rules/`**. Para delegar en subagentes usá los skills en **`.agent/skills/`**.
 
-La fuente de reglas del agente son las **Project Rules** en **`.cursor/rules/*.mdc`**: orquestador, protocolos, catálogo de subagentes, recomendación de herramientas, multi-proyecto Git, arquitectura, frontend, seguridad, testing y **`02-documentacion.mdc`** (protocolo de documentación IA, `alwaysApply: true` → `docs/99_meta/protocolo-documentacion-ia.md`). **Telemetría y specs del DT:** `vitals/INDEX.md`.
+No busques reglas del DT en `.cursor/rules/`: esa carpeta se eliminó en el setup. El protocolo de documentación equivalente al `02-documentacion.mdc` de Cursor está reflejado en **`.agent/rules/02-documentacion.md`** y en `docs/99_meta/protocolo-documentacion-ia.md`.
 
-**`.agent/rules/`** es el equivalente para Antigravity, no la fuente principal en Cursor.
-
-## Si usás **Antigravity**
-
-Leé **`.antigravity/rules.md`** y las reglas en **`.agent/rules/`**. Para delegar tareas especializadas usá los skills en **`.agent/skills/`**.
-
-**`.cursor/rules/*.mdc`** es el equivalente para Cursor; en Antigravity no están activas si no existe `.cursor/`.
-
-## Setup multi-IDE
-
-Los comandos **`/setup-cursor`** y **`/setup-antigravity`** solo se ejecutan cuando el usuario lo pide. Ajustan `.cursorrules` al IDE elegido usando las plantillas en **`docs/99_meta/cursorrules.*.md`** y eliminan la carpeta del otro IDE. No borres carpetas sin confirmación explícita.
+Para volver al modo multi-IDE restaurá con git (por ejemplo `git checkout .cursor`) y reemplazá `.cursorrules` por `docs/99_meta/cursorrules.dual.md`.
