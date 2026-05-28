@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -795,13 +795,14 @@
                 // Format tone display
                 let toneDisplay = item.tone;
                 
-                // Absolute file URL path
-                const fileUrl = 'file:///' + item.path.replace(/\\/g, '/');
+                // Link to Google Drive search for the file
+                const searchString = '"' + item.filename + '"';
+                const fileUrl = 'https://drive.google.com/drive/search?q=' + encodeURIComponent(searchString);
 
                 tr.innerHTML = `
                     <td style="font-weight: 600; color: var(--accent-gold-light); whitespace: nowrap;">${item.date}</td>
                     <td style="word-break: break-all;">
-                        <a href="${encodeURI(fileUrl)}" target="_blank" class="note-link">
+                        <a href="${fileUrl}" target="_blank" class="note-link">
                             <strong>${item.filename.replace(/\.[^/.]+$/, "")}</strong>
                         </a>
                     </td>
