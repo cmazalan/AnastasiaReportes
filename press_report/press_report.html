@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -982,13 +982,14 @@
                     else if (item.folder.toUpperCase().includes("MARZO")) monthYearLabel = "Marzo 2026";
                     else if (item.folder.toUpperCase().includes("ABRIL")) monthYearLabel = "Abril 2026";
                     else if (item.folder.toUpperCase().includes("MAYO") || item.folder.toUpperCase().includes("MUSTIQUE")) monthYearLabel = "Mayo 2026";
+                    else if (item.folder.toUpperCase().includes("JUNIO")) monthYearLabel = "Junio 2026";
                 }
                 
                 timelineGroups[monthYearLabel] = (timelineGroups[monthYearLabel] || 0) + 1;
             });
 
             // Order chronologically
-            const chronOrder = ["Diciembre 2025", "Enero 2026", "Febrero 2026", "Marzo 2026", "Abril 2026", "Mayo 2026"];
+            const chronOrder = ["Diciembre 2025", "Enero 2026", "Febrero 2026", "Marzo 2026", "Abril 2026", "Mayo 2026", "Junio 2026"];
             const chartLabels = chronOrder.filter(label => timelineGroups[label] !== undefined);
             const chartTimelineData = chartLabels.map(label => timelineGroups[label]);
 
